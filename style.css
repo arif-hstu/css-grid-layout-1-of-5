@@ -1,0 +1,82 @@
+body {
+    /* basic fallback & general styling */
+    background: #12458c;
+    margin: 0rem;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+
+    /* grid layout */
+    display: grid;
+    grid-gap: 0.1vw;
+    grid-template-columns: 6.5rem 1fr;
+    grid-template-rows: 6rem 1fr 3rem;
+    grid-template-areas: 'header header'
+        'sidebar content'
+        'footer footer'
+}
+
+header {
+    /* basic fallback & general styling */
+    text-transform: uppercase;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: #fff;
+    border-style: solid;
+    border-width: 2px;
+
+    /* grid layout */
+    grid-area: header;
+}
+
+aside {
+    /* basic fallback & general styling */
+    color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    float: left;
+    width: 6.3rem;
+
+    /* grid layout */
+    grid-area: sidebar;
+}
+
+footer {
+    /* basic fallback & general styling */
+    color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    clear: both;
+
+    /* grid layout */
+    grid-area: footer;
+
+}
+
+main {
+    /* basic fallback & general styling */
+    float: right;
+    width: calc(100% - 7.2rem);
+    padding: 5px;
+    background: hsl(240, 100%, 50%);
+
+    /* grid layout */
+    grid-area:content;
+}
+
+main>article {
+    /* basic fallback & general styling */
+    background: hsl(240, 100%, 50%);
+    background-image: url('https://source.unsplash.com/daily');
+    color: hsl(240, 0%, 100%);
+    border-width: 5px;
+}
+
+/* grid layout */
+@supports(display: grid) {
+    main {
+        width: auto;
+    }
+}
